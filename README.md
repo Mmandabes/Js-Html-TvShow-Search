@@ -1,4 +1,5 @@
 <a href="https://mmandabes.github.io/Js-Html-Tv-Show-Search/" target="_blank">Demo </a>
+[go](https://mmandabes.github.io/Js-Html-Tv-Show-Search/){:target="_blank" rel="noopener"}
 # Js-Html-Tv-Show-Search
 A simple tv show search
 returns the top result for the search from the TvMaze API
