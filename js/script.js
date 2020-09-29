@@ -25,7 +25,14 @@ input.addEventListener("keyup", function(event) {
                     for(i = 0; i < show._embedded.seasons.length; i++) {
                         if ( parseInt(event.target.id, 10) === show._embedded.seasons[i].number) {
                             let elm = document.getElementById('season-info');
-                            elm.innerHTML = `<img class="season-cover" src="${show._embedded.seasons[i].image.original.replace(/^http:\/\//i, 'https://')}" alt="${show.name} ${show._embedded.seasons[i].number} cover">
+                            let original;
+                            if (show._embedded.seasons[i].image) {
+                                original = show._embedded.seasons[i].image.original.replace(/^http:\/\//i, 'https://');
+                            } else {
+                                original = ` https://dummyimage.com/400x600&text=${show.name} Season ${show._embedded.seasons[i].number} `;
+                            }
+
+                            elm.innerHTML = `<img class="season-cover" src="${original}" alt="${show.name} ${show._embedded.seasons[i].number} cover">
                                              <div class="season-premiere">Premiered: ${show._embedded.seasons[i].premiereDate}</div>
                                              <div class="season-episodes">Number Of Episodes: ${show._embedded.seasons[i].episodeOrder}</div>
                                              <div class="season-summary">${show._embedded.seasons[i].summary || "No Description Available"}</div>
