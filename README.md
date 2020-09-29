@@ -1,4 +1,4 @@
-<a href="https://mmandabes.github.io/Js-Html-Tv-Show-Search/" target="_blank">Demo</a>
+<a href="https://mmandabes.github.io/Js-Html-Tv-Show-Search/" target="_blank">Demo </a>
 # Js-Html-Tv-Show-Search
 A simple tv show search
 returns the top result for the search from the TvMaze API
