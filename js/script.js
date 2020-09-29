@@ -29,7 +29,7 @@ input.addEventListener("keyup", function(event) {
                             if (show._embedded.seasons[i].image) {
                                 original = show._embedded.seasons[i].image.original.replace(/^http:\/\//i, 'https://');
                             } else {
-                                original = ` https://dummyimage.com/400x600&text=${show.name} Season ${show._embedded.seasons[i].number} `;
+                                original = `https://dummyimage.com/600x400/171717/299adb&text=${show.name} Season ${show._embedded.seasons[i].number} `;
                             }
 
                             elm.innerHTML = `<img class="season-cover" src="${original}" alt="${show.name} ${show._embedded.seasons[i].number} cover">
