@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:900|Montserrat:400,700&display=swap');
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    background-color: rgb(100 204 212);
+    font-family:'Montserrat', sans-serif;
+    min-width: 370px;
+    max-width: 1000px;
+}
+
+/* Typography */
+.my-show-summary, .season-summary {
+line-height: 1.5em;    
+}
+
+
+input[type=search] {
+    min-width: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin: 1rem  2rem 0 ;
+    width: calc(100% - 4rem);
+  }
+
+
+.my-show {
+    background: rgba(249,249,249,1);
+    background: -moz-linear-gradient(180deg, rgba(13,13,13,1) 70px, rgba(201,201,201,1) 70px, rgba(249,249,249,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(13,13,13,1) 70px, rgba(201,201,201,1) 70px, rgba(249,249,249,1) 100%);
+    background: linear-gradient(180deg, rgba(13,13,13,1) 70px, rgba(201,201,201,1) 70px, rgba(249,249,249,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0d0d",endColorstr="#c9c9c9",GradientType=1);
+    margin: 1rem;
+    padding: 1rem;
+    padding-right: 2rem;
+    box-shadow: 0.5em 0.5em 5px 0px #00000078;
+    border-radius: 0.4rem;
+    text-align: center;    
+    font-size: 1.3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows:minmax(0, 50px) 2fr auto minmax(0, auto);
+    grid-gap: 0.2rem;
+}
+
+.my-show:empty {
+    display: none;
+ }
+
+.my-show-title {
+    grid-column: span 4;
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+
+    font-family: 'Source Sans Pro', monospace;
+}
+
+.my-show-summary {
+    grid-column: span 4;
+    font-size: 1rem;
+    
+}
+
+.my-show-season {
+    font-size: 1.1rem;
+    padding: 0.2rem 0.2rem 0.5rem 0.2rem;
+    background-color: #91e4c0;
+    border:none;
+    border-radius: 5px;
+    margin: 0 0 1em 0.5em;
+    cursor: pointer;
+    transition: ease-in .2s;
+    text-align: center;
+}
+.my-show-season:hover,
+.my-show-season:focus {
+    background-color: lightseagreen;  
+}
+.my-show-season-info {
+    grid-column: span 4;
+    font-size: 1rem;
+    overflow-y: auto;
+    display:grid;
+    grid-gap: .4rem;
+    padding: .8rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "cover cover summary summary summary"
+                         "premiere premiere summary summary summary"
+                         "episodes episodes summary summary summary";
+}
+
+.my-show-season-info:empty {
+    display: none;
+ }
+
+ .season-premiere,
+ .season-episodes {
+    border-radius: 5px;
+    padding: .6rem;
+ }
+.season-cover{
+    min-height:270px;
+    grid-area:cover;
+    border-radius: 5px;
+    width: calc(100% - .4rem);
+    object-fit: cover;
+    display: block;
+}
+.season-premiere{
+    grid-area:premiere;
+    background-color: lightcoral;
+    
+}
+.season-episodes {
+    grid-area:episodes;
+    background-color: #91e4c0;
+}
+.season-summary{
+    grid-area:summary;
+}
+@media(max-width: 500px) {
+    .my-show-season-info {
+        grid-gap: .4rem;
+        padding: .8rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "cover cover "
+                             "summary summary"
+                             "episodes premiere";
+    }
+    .season-summary{
+        grid-column: span 2;
+        max-height: unset;
+    }
+}
