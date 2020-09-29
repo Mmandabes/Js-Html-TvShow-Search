@@ -32,7 +32,7 @@ input.addEventListener("keyup", function(event) {
                                              `;
                             setTimeout(function() {
                             elm.innerHTML = "";
-                             }, 5000);
+                             }, 10000);
                         }
                 }
         
