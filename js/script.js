@@ -25,7 +25,7 @@ input.addEventListener("keyup", function(event) {
                     for(i = 0; i < show._embedded.seasons.length; i++) {
                         if ( parseInt(event.target.id, 10) === show._embedded.seasons[i].number) {
                             let elm = document.getElementById('season-info');
-                            elm.innerHTML = `<img class="season-cover" src="${show._embedded.seasons[i].image.original}" alt="${show.name} ${show._embedded.seasons[i].number} cover">
+                            elm.innerHTML = `<img class="season-cover" src="${show._embedded.seasons[i].image.original.replace(/^http:\/\//i, 'https://')}" alt="${show.name} ${show._embedded.seasons[i].number} cover">
                                              <div class="season-premiere">Premiered: ${show._embedded.seasons[i].premiereDate}</div>
                                              <div class="season-episodes">Number Of Episodes: ${show._embedded.seasons[i].episodeOrder}</div>
                                              <div class="season-summary">${show._embedded.seasons[i].summary || "No Description Available"}</div>
