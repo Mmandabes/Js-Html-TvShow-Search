@@ -39,7 +39,7 @@ input.addEventListener("keyup", function(event) {
                                              `;
                             setTimeout(function() {
                             elm.innerHTML = "";
-                             }, 100000);
+                             }, 30000);
                         }
                 }
         
